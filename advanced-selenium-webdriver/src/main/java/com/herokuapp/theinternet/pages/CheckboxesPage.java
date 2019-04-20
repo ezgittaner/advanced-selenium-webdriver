@@ -23,6 +23,8 @@ public class CheckboxesPage extends BasePageObject {
 			if (!checkbox.isSelected()) {
 				checkbox.click();
 			}
+			// ! is not
+			// checkbox is a webelement so we use checkbox.click();
 		}
 	}
 
