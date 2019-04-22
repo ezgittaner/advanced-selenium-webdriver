@@ -2,6 +2,15 @@
 
 <suite name="NegativeLogInTestSuite" verbose="1" parallel="tests" thread-count="4">
 
+<test name="NegativeLogInTest-CH">
+		<parameter name="browser" value="chrome"></parameter>
+		<classes>
+			<class name="com.herokuapp.theinternet.loginpagetests.NegativeLogInTests">
+			</class>
+		</classes>
+	</test>
+	
+	<!--  
 	<test name="NegativeUsernameTest-CH">
 		<parameter name="username" value="incorrectUsername"></parameter>
 		<parameter name="password" value="SuperSecretPassword!"></parameter>
@@ -45,5 +54,7 @@
 			</class>
 		</classes>
 	</test>
+	
+	-->
 
 </suite>
