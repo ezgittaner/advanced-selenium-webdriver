@@ -18,7 +18,7 @@
 		</classes>
 	</test>
 
-	<test name="DropdownTests-PH">
+	<!-- <test name="DropdownTests-PH">
 		<parameter name="browser" value="phantomjs"></parameter>
 		<classes>
 			<class
@@ -32,6 +32,6 @@
 			<class
 				name="com.herokuapp.theinternet.dropdowntests.DropdownTest" />
 		</classes>
-	</test>
+	</test> -->
 
 </suite>

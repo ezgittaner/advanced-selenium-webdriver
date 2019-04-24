@@ -10,8 +10,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.htmlunit.HtmlUnitDriver;
-import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 public class BrowserDriverFactory {
 
@@ -55,14 +53,12 @@ public class BrowserDriverFactory {
 			driver.set(new FirefoxDriver(firefoxOptions));
 			break;
 
-		case "phantomjs":
-			System.setProperty("phantomjs.binary.path", "src/main/resources/phantomjs");
-			driver.set(new PhantomJSDriver());
-			break;
-
-		case "htmlunit":
-			driver.set(new HtmlUnitDriver());
-			break;
+		/*
+		 * case "phantomjs": System.setProperty("phantomjs.binary.path",
+		 * "src/main/resources/phantomjs"); driver.set(new PhantomJSDriver()); break;
+		 * 
+		 * case "htmlunit": driver.set(new HtmlUnitDriver()); break;
+		 */
 
 		default:
 			System.out.println("Do not know how to start: " + browser + ", starting chrome.");
