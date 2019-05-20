@@ -1,15 +1,9 @@
 package com.herokuapp.theinternet.base;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxBinary;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserDriverFactory {
 
@@ -37,22 +31,6 @@ public class BrowserDriverFactory {
 			driver.set(new FirefoxDriver());
 			break;
 
-		case "chromeheadless":
-			System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("--headless");
-			driver.set(new ChromeDriver(chromeOptions));
-			break;
-
-		case "firefoxheadless":
-			System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
-			FirefoxBinary firefoxBinary = new FirefoxBinary();
-			firefoxBinary.addCommandLineOptions("--headless");
-			FirefoxOptions firefoxOptions = new FirefoxOptions();
-			firefoxOptions.setBinary(firefoxBinary);
-			driver.set(new FirefoxDriver(firefoxOptions));
-			break;
-
 		/*
 		 * case "phantomjs": System.setProperty("phantomjs.binary.path",
 		 * "src/main/resources/phantomjs"); driver.set(new PhantomJSDriver()); break;
@@ -70,15 +48,4 @@ public class BrowserDriverFactory {
 		return driver.get();
 	}
 
-	public WebDriver createChromeWithMobileEmulation(String deviceName) {
-		log.info("Starting driver with " + deviceName + " emulation]");
-		Map<String, String> mobileEmulation = new HashMap<>();
-		mobileEmulation.put("deviceName", deviceName);
-		ChromeOptions chromeOptions = new ChromeOptions();
-		chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-
-		System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-		driver.set(new ChromeDriver(chromeOptions));
-		return driver.get();
-	}
 }

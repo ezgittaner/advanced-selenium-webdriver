@@ -29,13 +29,6 @@ public class BaseTest {
 		String testName = ctx.getCurrentXmlTest().getName();
 		log = LogManager.getLogger(testName);
 
-		BrowserDriverFactory factory = new BrowserDriverFactory(browser, log);
-		if (deviceName != null) {
-			driver = factory.createChromeWithMobileEmulation(deviceName);
-		} else {
-			driver = factory.createDriver();
-		}
-
 		// This sleep here is for instructor only. Students don't need this here
 		try {
 			Thread.sleep(3000);
